@@ -4,6 +4,7 @@ import { useNavigate, Link } from 'react-router-dom';
 export default function Login() {
   const [email, setEmail] = useState('');
   const [contraseña, setContraseña] = useState('');
+  const [mostrar, setMostrar] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -61,14 +62,23 @@ export default function Login() {
 
           <div style={styles.field}>
             <label style={styles.label}>Contraseña</label>
-            <input
-              type="password"
-              value={contraseña}
-              onChange={(e) => setContraseña(e.target.value)}
-              style={styles.input}
-              placeholder="••••••••"
-              required
-            />
+            <div style={styles.inputWrapper}>
+              <input
+                type={mostrar ? 'text' : 'password'}
+                value={contraseña}
+                onChange={(e) => setContraseña(e.target.value)}
+                style={styles.inputIcon}
+                placeholder="••••••••"
+                required
+              />
+              <button
+                type="button"
+                onClick={() => setMostrar(!mostrar)}
+                style={styles.eyeBtn}
+              >
+                {mostrar ? '🙈' : '👁️'}
+              </button>
+            </div>
           </div>
 
           <button type="submit" style={styles.button} disabled={loading}>
@@ -112,7 +122,18 @@ const styles = {
     width: '100%', padding: '12px', borderRadius: '8px',
     border: '2px solid #BDD7EE', fontSize: '15px',
     outline: 'none', boxSizing: 'border-box',
-    transition: 'border-color 0.2s',
+  },
+  inputWrapper: {
+    display: 'flex', alignItems: 'center',
+    border: '2px solid #BDD7EE', borderRadius: '8px', overflow: 'hidden',
+  },
+  inputIcon: {
+    flex: 1, padding: '12px', border: 'none',
+    fontSize: '15px', outline: 'none',
+  },
+  eyeBtn: {
+    padding: '0 12px', background: 'none',
+    border: 'none', cursor: 'pointer', fontSize: '18px',
   },
   button: {
     width: '100%', padding: '14px', background: '#1F4E79',
