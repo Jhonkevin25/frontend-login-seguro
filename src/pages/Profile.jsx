@@ -23,7 +23,7 @@ export default function Profile() {
       setNombre(u.nombre);
     }
 
-    fetch('http://localhost:3000/api/user/profile', {
+    fetch('https://sistema-login-seguro.onrender.com/api/user/profile', {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then(res => res.json())
