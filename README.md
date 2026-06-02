@@ -1,16 +1,60 @@
-# React + Vite
+# 🖥️ Frontend — Sistema Web de Autenticación - Login Seguro
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Interfaz web desarrollada con React + Vite que consume la API REST del backend de autenticación.
 
-Currently, two official plugins are available:
+## 🛠️ Stack Tecnológico
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+| Tecnología | Uso |
+|---|---|
+| React 18 | Librería de interfaz de usuario |
+| Vite | Bundler y servidor de desarrollo |
+| React Router DOM | Navegación entre páginas |
+| Fetch API | Peticiones HTTP al backend |
 
-## React Compiler
+## 📁 Estructura del Proyecto
+frontend/
+├── src/
+│   ├── pages/
+│   │   ├── Login.jsx
+│   │   ├── Register.jsx
+│   │   └── Profile.jsx
+│   ├── App.jsx
+│   └── main.jsx
+├── index.html
+└── package.json
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Instalación y Uso
 
-## Expanding the ESLint configuration
+### 1. Clonar el repositorio
+```bash
+git clone https://github.com/Jhonkevin25/frontend-login-seguro.git
+cd frontend-login-seguro
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 2. Instalar dependencias
+```bash
+npm install
+```
+
+### 3. Iniciar el servidor de desarrollo
+```bash
+npm run dev
+```
+
+Abrir en el navegador: `http://localhost:5173`
+
+## ⚠️ Requisito
+
+El backend debe estar corriendo en `http://localhost:3000`.
+Repositorio del backend: [sistema-login-seguro](https://github.com/Jhonkevin25/sistema-login-seguro)
+
+## 📄 Páginas
+
+| Ruta | Descripción | Protegida |
+|---|---|---|
+| /login | Iniciar sesión | ❌ |
+| /register | Crear cuenta | ❌ |
+| /profile | Perfil del usuario | ✅ |
+
+## 👤 Autor
+Jhon Kevin — 2026
